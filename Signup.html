@@ -1,0 +1,120 @@
+<!DOCTYPE html
+   PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>Mod fitness SignUp</title>
+
+<script>
+   function doClear()
+   {
+     
+       document.SignUp.lastname.value="";
+       document.SignUp.firstname.value="";
+       document.SignUp.email.value="";
+       document.SignUp.username.value="";
+       document.SignUp.password.value="";
+       
+       
+       
+   }
+   function doSubmit()
+   {
+       if (validateText()==false);
+       {
+         alert("Congratulation on Becoming a Memeber.");
+            
+
+       } 
+
+      
+
+   }
+
+
+   function validateText()
+   {
+       var lastname = document.SignUp.lastname.value;
+       if (lastname=="") {
+       alert("Last Name must be filled out.")
+       return false;}
+
+
+       var firstname = document.SignUp.firstname.value;
+       if (firstname=="")
+       {
+       alert("First Name must be filled out.")
+       return false;}
+       
+
+       var email = document.SignUp.email.value;
+       if (email=="") 
+       {
+       alert("Email must be filled out.")
+       return false;}
+
+
+       var username = document.SignUp.username.value;
+       if (username=="") 
+       {
+       alert("Username must be filled out.")
+       return false;}
+ 
+
+       var password = document.SignUp.password.value;
+       if (password=="") 
+       {
+       alert(" Password must be filled out.")
+       return false;}
+   }
+
+
+   function validateRadio()
+   {
+       if (document.SignUp.newsletter[0].checked) return true;
+       if (document.SignUp.newsletter[1].checked) return true;
+       return false;
+   }
+</script>
+
+
+</head>
+<body>
+<center><font face="Broadway" color="#590d8e" size="+2">Sign Up</font></center>
+
+<form name="SignUp">
+
+<p><b><font color="#590d8e">
+
+<fieldset>
+Last Name:<input name="lastname" type="text" size="25" />
+First Name:<input name="firstname" type="text" size="25" />
+<br />Email:<input name="email" type="text" size="25" />
+<br />Username:<input name="username" type="text" size="25" />
+<br />Password:<input name="password" type="text" size="25" />
+
+</fieldset>
+
+
+Would you like to receive our e-mail newsletter? 
+<input name="newsletter" type="radio" value="yes" />Yes
+<input name="newsletter" type="radio" value="no" /> No
+
+</fieldset>
+
+
+
+   
+   <input type="button" value="Register" onclick= "doSubmit()">
+   <input type="button" value="Clear Entries" onclick= "doClear()">
+<button type="button" class="btn btn-primary" onclick="window.history.back();">Cancel</button>
+
+
+
+</form>
+
+</body>
+
+</html>
